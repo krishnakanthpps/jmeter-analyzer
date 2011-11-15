@@ -20,7 +20,7 @@ class JMeterAnalyzer:
   def run(self, opts, args):
     for opt, arg in opts:
       if opt in ('-f'):
-        self.result_file = arg[0:arg.index(".csv")]
+        self.result_file = arg
     with open (self.result_file) as rf:
       for line in rf:
         self.parse(line)
@@ -54,7 +54,7 @@ class JMeterAnalyzer:
     components = line.split(',')
     sample_name = components[self.SAMPLE_NAME_INDEX]
     if sample_name in self.response_times:
-      self.response_times[sample].append(components[self.RESPONSE_TIME_INDEX])
+      self.response_times[sample_name].append(components[self.RESPONSE_TIME_INDEX])
       self.sample_count[sample_name] = self.sample_count[sample_name] +1
       if components[self.SAMPLE_STATUS_INDEX] == "ERROR": self.error_count[sample_name] += 1
     else:

@@ -1,0 +1,10 @@
+jmeter_csv_analyzer
+-------------------
+
+This is a small utlity script written in python that I use for analyzing performance test results.
+
+Usage:
+./jmeter_csv_analyzer.py -f <jmeter_sample_results_file.csv>
+
+Creates a file <jmeter_sample_results_file>_analyzed.csv which contains a csv-formatted "table" a little like JMeters Aggregate Report. The file can then be opened in e.g. Numbers/Calc/Excel for drawing graphs etc.
+
